@@ -31,16 +31,16 @@ import setting
 CONF = cfg.CONF
 
 
-class LinkSelection(app_manager.RyuApp):
+class LinkSelector(app_manager.RyuApp):
     """
-        NetworkDelayDetector is a Ryu app for collecting link delay.
+        LinkSelector is an Ryu app for selecting basis links.
     """
 
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
 
     def __init__(self, *args, **kwargs):
-        super(NetworkDelayDetector, self).__init__(*args, **kwargs)
-        self.name = 'delaydetector'
+        super(LinkSelector, self).__init__(*args, **kwargs)
+        self.name = 'LinkSelector'
         self.sending_echo_request_interval = 0.05
         # Get the active object of switches and awareness module.
         # So that this module can use their data.
